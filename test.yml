@@ -5,7 +5,7 @@
 
   tasks:
     - name: Send curl -I request to 514c.co
-      command: curl -I 514c.co
+      command: curl -I https://www.postb.in/1732022370817-5229585003107
       register: curl_response
       ignore_errors: yes  # To avoid failing if curl command has issues
 
