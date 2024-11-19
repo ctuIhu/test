@@ -1,0 +1,14 @@
+---
+- name: Send a curl request to a website
+  hosts: localhost  # Or replace with your target hosts or group
+  gather_facts: no
+
+  tasks:
+    - name: Send curl -I request to 514c.co
+      command: curl -I 514c.co
+      register: curl_response
+      ignore_errors: yes  # To avoid failing if curl command has issues
+
+    - name: Show the response headers from curl
+      debug:
+        var: curl_response.stdout
