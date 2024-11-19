@@ -1,4 +1,14 @@
-  ansible.builtin.package:
-    name:
-      - nginx
-    state: latest
+---
+- name: Install nginx
+  hosts: dev_serv  # Change to your target host or group if necessary
+  gather_facts: no
+
+  tasks:
+    - name: Install Nginx
+      ansible.builtin.package:
+        name:
+          - nginx
+          state: latest
+
+
+
