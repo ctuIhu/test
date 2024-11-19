@@ -1,7 +1,4 @@
----
-- hosts: dev_servers
-  become: true
-  tasks: 
+- name: Install nginx
   ansible.builtin.package:
     name:
       - nginx
