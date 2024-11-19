@@ -1,6 +1,6 @@
 ---
 - name: Install nginx
-  hosts: dev_serv  # Change to your target host or group if necessary
+  hosts: test  # Change to your target host or group if necessary
   become: true
   tasks:
     - name: Install Nginx
