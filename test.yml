@@ -1,14 +1,7 @@
 ---
-- name: Send a curl request to a website
-  hosts: localhost  # Or replace with your target hosts or group
-  gather_facts: no
-
-  tasks:
-    - name: Send curl -I request to 514c.co
-      command: curl -I https://www.postb.in/1732022370817-5229585003107
-      register: curl_response
-      ignore_errors: yes  # To avoid failing if curl command has issues
-
-    - name: Show the response headers from curl
-      debug:
-        var: curl_response.stdout
+- hosts: dev_servers
+  become: true
+  tasks: 
+    -  name: Print OS Info
+    ansible.builtin.package:
+      name: apache2
