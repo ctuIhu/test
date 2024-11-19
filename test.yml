@@ -2,6 +2,8 @@
 - hosts: dev_servers
   become: true
   tasks: 
-    -  name: Print OS Info
-    ansible.builtin.package:
-      name: apache2
+- name: Install the nginx
+  ansible.builtin.package:
+    name:
+      - nginx
+    state: latest
